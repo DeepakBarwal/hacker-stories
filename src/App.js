@@ -20,6 +20,20 @@ const App = () => {
     },
   ];
 
+  return (
+    <div>
+      <h1>My Hacker Stories</h1>
+
+      <Search />
+
+      <hr />
+
+      <List list={stories} />
+    </div>
+  );
+};
+
+const Search = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const handleChange = (event) => {
@@ -28,18 +42,12 @@ const App = () => {
 
   return (
     <div>
-      <h1>My Hacker Stories</h1>
-
       <label htmlFor='search'>Search: </label>
       <input id='search' type='text' onChange={handleChange} />
 
       <p>
         Searching for <strong>{searchTerm}</strong>
       </p>
-
-      <hr />
-
-      <List list={stories} />
     </div>
   );
 };
